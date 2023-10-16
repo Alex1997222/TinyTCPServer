@@ -48,12 +48,11 @@ uint32_t network_convert_ip_p_to_n(const char *ip_addr){
     }
 
     char* p = strtok(modifiable_addr,tok);
-
     while(p != NULL && idx < 4){
         ipArray[idx++] = (uint8_t)atoi(p);
         p=strtok(NULL,tok);
     }
-    
+
     //free the memory here
     free(modifiable_addr);
 
@@ -62,7 +61,7 @@ uint32_t network_convert_ip_p_to_n(const char *ip_addr){
         fprintf(stderr, "Malformed IP address\n");
         return 0;
     }
-
+    
     //Assign the value
     for(int i = 3; i >= 0; --i){
         ip32Addr <<= 8;
