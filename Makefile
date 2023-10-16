@@ -3,7 +3,7 @@ CFLAGS=-g
 TARGET:testapp.exe
 LIBS=-lpthread
 OBJS=TcpClientDBManager.o 		 		\
-			TcpClientServiceManager.o 		 \
+			TcpClientServerManager.o 		 \
 			TcpNewConnectionAcceptor.o 	 \
 			TcpServerController.o 				  \
 			network_utils.o					
@@ -17,8 +17,8 @@ testapp.o:testapp.cpp
 TcpClientDBManager.o:TcpClientDBManager.cpp
 	${CC} ${CFLAGS} -c TcpClientDBManager.cpp -o TcpClientDBManager.o
 
-TcpClientServiceManager.o:TcpClientServiceManager.cpp
-	${CC} ${CFLAGS} -c TcpClientServiceManager.cpp -o TcpClientServiceManager.o
+TcpClientServerManager.o:TcpClientServerManager.cpp
+	${CC} ${CFLAGS} -c TcpClientServerManager.cpp -o TcpClientServerManager.o
 
 TcpNewConnectionAcceptor.o:TcpNewConnectionAcceptor.cpp
 	${CC} ${CFLAGS} -c TcpNewConnectionAcceptor.cpp -o TcpNewConnectionAcceptor.o

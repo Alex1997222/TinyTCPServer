@@ -1,20 +1,19 @@
 #ifndef __TCPDBMANAGER__
 #define __TCPDBMANAGER__
 
-#include "TcpServerController.h"
 #include <list>
+
+class TCPServerController;
 
 class TCPClientDBManager{
 private:
 
 public:
     TCPServerController* tcpServerCtrl;
-    TCPClientDBManager(TCPServerController*){
+    TCPClientDBManager(TCPServerController*);
+    ~TCPClientDBManager();
 
-    }
-    ~TCPClientDBManager(){
-
-    }
+    void StartTcpClientDBManagerThread();
 };
 
 #endif

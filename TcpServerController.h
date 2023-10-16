@@ -7,6 +7,10 @@
 #include <stdint.h>
 #include <iostream>
 
+class TCPNewConnectionAcceptor;
+class TCPClientDBManager;
+class TCPClientServerManager;
+
 class TCPServerController{
 private:
     TCPNewConnectionAcceptor* tcpNewConnectionAcceptor;
@@ -16,12 +20,9 @@ public:
     uint32_t ip_addr;   //the ip address with 32bit
     uint16_t port_no;   //the port no with 16bit
     std::string name;
-    TCPServerController(std::string ip_addr,uint16_t port_no,std::string name){
-        
-    }
-    ~TCPServerController(){
+    TCPServerController(std::string ip_addr,uint16_t port_no,std::string name);
+    ~TCPServerController();
 
-    }
     void start();
     void stop();
 };

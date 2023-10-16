@@ -1,7 +1,7 @@
 #ifndef __TCPCLIENTSERVERMANAGER__
 #define __TCPCLIENTSERVERMANAGER__
 
-#include "TcpServerController.h"
+class TCPServerController;
 
 class TCPClientServerManager{
 private:
@@ -10,14 +10,10 @@ private:
 
 public:
     TCPServerController* tcpServerCtrl;
-    TCPClientServerManager(TCPServerController*){
+    TCPClientServerManager(TCPServerController*);
+    ~TCPClientServerManager();
 
-    }
-    ~TCPClientServerManager(){
-
-    }
-
-    
+    void StartTcpClientServerManagerThread();
 };
 
 #endif
